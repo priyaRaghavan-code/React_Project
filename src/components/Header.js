@@ -2,14 +2,28 @@ import { AppBar, Toolbar, Grid, InputBase, IconButton, Badge, makeStyles } from 
 import NotificationsNoneIcon from '@material-ui/icons/NotificationsNone';
 import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
+import SearchIcon from '@material-ui/icons/Search';
 import React from 'react';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root:{
     backgroundColor:'#fff',
+    
+  },
+
+  searchInput:{
+    opacity:'0.6',
+    padding:`0px ${theme.spacing(1)} px`,
+    fontSize:'0.8rem',
+    '&:hover':{
+      backgroundColor:'#f2f2f2'
+    },
+    '&:MuiInputBase-root':{
+      marginRight: theme.spacing(1)
+    }
   }
-})
+}))
 
 export default function Header() {
   const classes = useStyles();
@@ -18,25 +32,25 @@ export default function Header() {
     <div>
       <AppBar position="static" className={ classes.root }>
         <Toolbar>
-          <Grid container>
+          <Grid container alignItems="center">
             <Grid item>
-              <InputBase />
+              <InputBase className = {classes.searchInput} placeholder="search Topics" startAdornment={<SearchIcon fontSize="small"/>}/>
             </Grid>
             <Grid item sm>
               </Grid>
             <Grid item>
               <IconButton>
                 <Badge badgeContent={6} color="secondary">
-                  <NotificationsNoneIcon />
+                  <NotificationsNoneIcon fontSize="small"/>
                 </Badge>
               </IconButton>
               <IconButton>
                 <Badge badgeContent={6} color="secondary">
-                      <ChatBubbleOutlineIcon/>
+                      <ChatBubbleOutlineIcon fontSize="small"/>
                 </Badge>
               </IconButton>
               <IconButton>
-                  <PowerSettingsNewIcon/>
+                  <PowerSettingsNewIcon fontSize="small"/>
               </IconButton>
             </Grid>
           </Grid>
