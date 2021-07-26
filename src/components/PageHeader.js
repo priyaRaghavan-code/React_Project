@@ -1,7 +1,7 @@
 import React from 'react'
 import {Card, makeStyles, Paper, Typography} from '@material-ui/core';
-import { CallMissedSharp } from '@material-ui/icons';
-import { mergeClasses } from '@material-ui/styles';
+// import { CallMissedSharp } from '@material-ui/icons';
+// import { mergeClasses } from '@material-ui/styles';
 
 const useStyles = makeStyles(theme =>( {
   root:{
